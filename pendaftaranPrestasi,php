@@ -1,0 +1,40 @@
+<?php
+require_once __DIR__ . '/Pendaftaran.php';
+
+/**
+ * Subclass: PendaftaranPrestasi
+ * Tahap 4 - Implementasi Pewarisan (Inheritance)
+ */
+class PendaftaranPrestasi extends Pendaftaran {
+
+    // Properti tambahan khusus jalur Prestasi
+    protected $jenisPrestasi;
+    protected $tingkatPrestasi;
+
+    public function __construct($id_pendaftaran, $nama_calon, $asal_sekolah, $nilai_ujian, $biayaPendaftaranDasar, $jenisPrestasi, $tingkatPrestasi) {
+        parent::__construct($id_pendaftaran, $nama_calon, $asal_sekolah, $nilai_ujian, $biayaPendaftaranDasar);
+        $this->jenisPrestasi = $jenisPrestasi;
+        $this->tingkatPrestasi = $tingkatPrestasi;
+    }
+
+    // Implementasi method abstrak dari induk
+    // CATATAN: logika biaya final menyusul di Tahap 5 sesuai ketentuan soal
+    public function hitungTotalBiaya() {
+        return $this->biayaPendaftaranDasar;
+    }
+
+    public function tampilkanInfoJalur() {
+        return "Jalur Prestasi - Jenis: {$this->jenisPrestasi}, Tingkat: {$this->tingkatPrestasi}";
+    }
+
+    /**
+     * Metode Query Spesifik
+     * Mengambil seluruh data pendaftar jalur Prestasi
+     */
+    public function getDaftarPrestasi($db) {
+        $query = "SELECT * FROM tabel_pendaftaran WHERE jalur_pendaftaran = 'Prestasi'";
+        $stmt = $db->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+}
