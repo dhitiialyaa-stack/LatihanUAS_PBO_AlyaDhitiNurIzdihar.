@@ -5,7 +5,7 @@ require_once __DIR__ . '/Pendaftaran.php';
  * Subclass: PendaftaranReguler
  * Tahap 4 - Implementasi Pewarisan (Inheritance)
  */
-class PendaftaranReguler extends Pendaftaran {
+class PendaftaranRegular extends Pendaftaran {
 
     // Properti tambahan khusus jalur Reguler
     protected $pilihanProdi;
