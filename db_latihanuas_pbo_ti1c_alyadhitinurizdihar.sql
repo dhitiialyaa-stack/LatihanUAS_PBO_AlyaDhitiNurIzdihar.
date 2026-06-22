@@ -21,7 +21,7 @@ SET time_zone = "+00:00";
 -- Database: `db_latihanuas_pbo_ti1c_alyadhitinurizdihar`
 --
 
--- --------------------------------------------------------
+-- -------------------------------------------------------
 
 --
 -- Table structure for table `tabel_pendaftaran`
