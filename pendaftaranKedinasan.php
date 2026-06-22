@@ -17,10 +17,13 @@ class PendaftaranKedinasan extends Pendaftaran {
         $this->instansiSponsor = $instansiSponsor;
     }
 
-    // Implementasi method abstrak dari induk
-    // CATATAN: logika biaya final menyusul di Tahap 5 sesuai ketentuan soal
+    /**
+     * Tahap 5 - Overriding hitungTotalBiaya()
+     * Kedinasan: dikenakan surcharge 25% untuk administrasi khusus & kemitraan dinas
+     * Total Biaya = biayaPendaftaranDasar * 1.25
+     */
     public function hitungTotalBiaya() {
-        return $this->biayaPendaftaranDasar;
+        return $this->biayaPendaftaranDasar * 1.25;
     }
 
     public function tampilkanInfoJalur() {

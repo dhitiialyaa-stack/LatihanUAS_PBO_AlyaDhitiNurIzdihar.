@@ -17,10 +17,13 @@ class PendaftaranPrestasi extends Pendaftaran {
         $this->tingkatPrestasi = $tingkatPrestasi;
     }
 
-    // Implementasi method abstrak dari induk
-    // CATATAN: logika biaya final menyusul di Tahap 5 sesuai ketentuan soal
+    /**
+     * Tahap 5 - Overriding hitungTotalBiaya()
+     * Prestasi: mendapat insentif/potongan apresiasi sebesar Rp50.000
+     * Total Biaya = biayaPendaftaranDasar - 50000
+     */
     public function hitungTotalBiaya() {
-        return $this->biayaPendaftaranDasar;
+        return $this->biayaPendaftaranDasar - 50000;
     }
 
     public function tampilkanInfoJalur() {

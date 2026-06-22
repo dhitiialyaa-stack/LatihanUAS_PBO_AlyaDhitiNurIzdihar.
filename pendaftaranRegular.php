@@ -17,8 +17,11 @@ class PendaftaranReguler extends Pendaftaran {
         $this->lokasiKampus = $lokasiKampus;
     }
 
-    // Implementasi method abstrak dari induk
-    // CATATAN: logika biaya final menyusul di Tahap 5 sesuai ketentuan soal
+    /**
+     * Tahap 5 - Overriding hitungTotalBiaya()
+     * Reguler: tarif standar murni, tidak ada biaya tambahan
+     * Total Biaya = biayaPendaftaranDasar
+     */
     public function hitungTotalBiaya() {
         return $this->biayaPendaftaranDasar;
     }
