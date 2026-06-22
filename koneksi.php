@@ -3,8 +3,8 @@
 class koneksi {
     private $host = "localhost";
     private $db_name = "DB_LatihanUAS_PBO_TI1C_AlyaDhitiNurIzdihar";
-    private $username = "root";   // sesuaikan dengan kredensial MySQL Anda
-    private $password = "";       // sesuaikan dengan kredensial MySQL Anda
+    private $username = "root";   
+    private $password = "";       
     public $conn;
 
     public function getConnection() {

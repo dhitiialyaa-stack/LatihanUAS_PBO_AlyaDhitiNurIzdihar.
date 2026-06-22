@@ -17,10 +17,6 @@ abstract class Pendaftaran {
     protected $nilai_ujian;
     protected $biayaPendaftaranDasar;
 
-    /**
-     * Constructor untuk inisialisasi atribut global
-     * dari data baris tabel_pendaftaran.
-     */
     public function __construct($id_pendaftaran, $nama_calon, $asal_sekolah, $nilai_ujian, $biayaPendaftaranDasar) {
         $this->id_pendaftaran = $id_pendaftaran;
         $this->nama_calon = $nama_calon;
